@@ -6,24 +6,27 @@ import html
 
 from aiogram import F, Router
 from aiogram.filters import Command
+from aiogram.fsm.context import FSMContext
 from aiogram.types import CallbackQuery, Message
 
 from ..api_client import api
 from ..i18n import t
 from ..keyboards.common import spell_kb
 from ..redis_store import get_spell_session, set_spell_session
+from ..states import SpellFlow
 
 router = Router()
 
 
-@router.message(Command("spell"))
-async def cmd_spell(message: Message, lang: str) -> None:
-    text = (message.text or "").removeprefix("/spell").strip()
-    if not text:
-        await message.answer(t(lang, "edit-enter-value", field="matn"))
+async def _do_spell(message: Message, lang: str, text: str) -> None:
+    try:
+        resp = await api.call(
+            message.from_user.id, "POST", "/api/v1/spell/check", json={"text": text}
+        )
+        issues = resp.json() if resp.status_code == 200 else []
+    except Exception:
+        await message.answer(t(lang, "parse-error"))
         return
-    resp = await api.call(message.from_user.id, "POST", "/api/v1/spell/check", json={"text": text})
-    issues = resp.json() if resp.status_code == 200 else []
     if not issues:
         await message.answer(t(lang, "spell-none"))
         return
@@ -33,6 +36,22 @@ async def cmd_spell(message: Message, lang: str) -> None:
         for i, iss in enumerate(issues[:8])
     ]
     await message.answer("\n".join(lines), reply_markup=spell_kb(lang, len(issues)))
+
+
+@router.message(Command("spell"))
+async def cmd_spell(message: Message, lang: str, state: FSMContext) -> None:
+    text = (message.text or "").removeprefix("/spell").strip()
+    if not text:
+        await state.set_state(SpellFlow.reviewing)
+        await message.answer(t(lang, "spell-ask"))
+        return
+    await _do_spell(message, lang, text)
+
+
+@router.message(SpellFlow.reviewing, F.text)
+async def spell_awaited_text(message: Message, lang: str, state: FSMContext) -> None:
+    await state.clear()
+    await _do_spell(message, lang, message.text or "")
 
 
 @router.callback_query(F.data == "spell:all")

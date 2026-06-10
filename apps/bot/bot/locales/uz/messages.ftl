@@ -67,3 +67,5 @@ help-text = <b>Qo'llanma</b>
     /feedback — fikr bildirish
 unknown = Tushunmadim. /help ni ko'ring yoki manba yuboring.
 maintenance = 🔧 Texnik tanaffus. Birozdan keyin urinib ko'ring.
+spell-ask = Tekshiriladigan matnni yuboring:
+parse-error = ❗ Tahlil qilib bo'lmadi. Manba matnini to'liqroq yuboring (kamida bir necha so'z).

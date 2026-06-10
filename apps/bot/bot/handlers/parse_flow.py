@@ -48,25 +48,37 @@ async def handle_pdf(message: Message, lang: str) -> None:
 @router.message(F.text & ~F.text.startswith("/"))
 async def handle_text(message: Message, lang: str) -> None:
     """Matn / URL / DOI / ISBN — hammasi parse quvuriga."""
-    menu_keys = ("menu-new", "menu-lists", "menu-export", "menu-settings", "menu-premium")
-    for key in menu_keys:
-        if message.text == t(lang, key):
-            cmd = {"menu-new": "/new", "menu-lists": "/list", "menu-export": "/export",
-                   "menu-settings": "/settings", "menu-premium": "/premium"}[key]
-            from aiogram.types import Message as Msg  # noqa: F401
+    # Menyu tugmalari — tegishli komanda to'g'ridan-to'g'ri bajariladi
+    from .commands import cmd_export, cmd_list, cmd_new, cmd_premium, cmd_settings
 
-            await message.answer(f"{cmd}")
+    menu_handlers = {
+        "menu-new": cmd_new,
+        "menu-lists": cmd_list,
+        "menu-export": cmd_export,
+        "menu-settings": cmd_settings,
+        "menu-premium": cmd_premium,
+    }
+    for key, handler in menu_handlers.items():
+        if message.text == t(lang, key):
+            await handler(message, lang)
             return
-    progress = await message.answer(t(lang, "analyzing"))
-    resp = await api.call(
-        message.from_user.id, "POST", "/api/v1/sources/parse", json={"text": message.text}
-    )
-    if resp.status_code == 429:
-        cap = resp.json().get("detail", {}).get("cap", "")
-        await progress.edit_text(t(lang, "limit-reached", cap=cap))
+    if len((message.text or "").strip()) < 5:
+        await message.answer(t(lang, "unknown"))
         return
-    resp.raise_for_status()
-    sources = resp.json()["sources"]
+    progress = await message.answer(t(lang, "analyzing"))
+    try:
+        resp = await api.call(
+            message.from_user.id, "POST", "/api/v1/sources/parse", json={"text": message.text}
+        )
+        if resp.status_code == 429:
+            cap = resp.json().get("detail", {}).get("cap", "")
+            await progress.edit_text(t(lang, "limit-reached", cap=cap))
+            return
+        resp.raise_for_status()
+        sources = resp.json()["sources"]
+    except Exception:
+        await progress.edit_text(t(lang, "parse-error"))
+        return
     await progress.delete()
     for src in sources[:10]:
         await message.answer(
