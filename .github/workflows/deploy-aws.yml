@@ -1,0 +1,41 @@
+name: Deploy AWS
+on:
+  push:
+    branches: [main]
+    paths: ["apps/api/**", "apps/bot/**", "packages/citation-core/**"]
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  AWS_REGION: us-east-1
+  ECR_REGISTRY: ${{ secrets.ECR_REGISTRY }}
+
+jobs:
+  build-push-deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        service: [api, bot]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+      - uses: aws-actions/amazon-ecr-login@v2
+      - name: Build & push
+        run: |
+          IMAGE=$ECR_REGISTRY/manba-${{ matrix.service }}:${{ github.sha }}
+          docker build -f apps/${{ matrix.service }}/Dockerfile -t $IMAGE .
+          docker push $IMAGE
+      - name: ECS rolling update
+        run: |
+          aws ecs update-service --cluster manba --service manba-${{ matrix.service }} \
+            --force-new-deployment
+      - name: Worker ham yangilansin (api obrazi)
+        if: matrix.service == 'api'
+        run: |
+          aws ecs update-service --cluster manba --service manba-pdf-worker \
+            --force-new-deployment

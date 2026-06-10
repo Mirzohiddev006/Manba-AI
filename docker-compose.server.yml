@@ -1,0 +1,52 @@
+# EC2 server uchun: postgres + redis + api + bot (polling)
+# Ishlatish: docker compose -f docker-compose.server.yml up -d
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: manba
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-manba}
+      POSTGRES_DB: manba
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U manba"]
+      interval: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    volumes: [redisdata:/data]
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      retries: 10
+
+  api:
+    build: { context: ., dockerfile: apps/api/Dockerfile }
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      ENV: lite   # PDF/S3 o'chiq — kredit tejaladi; keyin yoqiladi
+      DATABASE_URL: postgresql+asyncpg://manba:${DB_PASSWORD:-manba}@postgres:5432/manba
+      REDIS_URL: redis://redis:6379/0
+    depends_on:
+      postgres: { condition: service_healthy }
+      redis: { condition: service_healthy }
+    command: sh -c "alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port 8000"
+
+  bot:
+    build: { context: ., dockerfile: apps/bot/Dockerfile }
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      BOT_MODE: polling      # inbound port kerak emas — xavfsiz va sodda
+      API_BASE_URL: http://api:8000
+      REDIS_URL: redis://redis:6379/1
+    depends_on: [api]
+
+volumes:
+  pgdata:
+  redisdata:

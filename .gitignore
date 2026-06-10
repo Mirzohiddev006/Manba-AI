@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+node_modules/
+dist/
+.turbo/
+.terraform/
+*.tfstate*
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+pytest-cache-files-*/
+coverage/
+htmlcov/
+*.docx_tmp
+*.tfvars

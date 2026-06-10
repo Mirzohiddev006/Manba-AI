@@ -1,0 +1,35 @@
+name: CI
+on:
+  pull_request:
+  push:
+    branches: [main, dev]
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v4
+        with: { python-version: "3.12" }
+      - run: uv sync --all-packages
+      - name: Ruff
+        run: uv run ruff check apps/api apps/bot packages/citation-core
+      - name: Mypy (citation-core strict)
+        run: uv run mypy packages/citation-core/citation_core
+      - name: Pytest citation-core (aniqlik darvozasi)
+        run: |
+          uv run pytest packages/citation-core/tests -q \
+            --accuracy-threshold=0.97
+      - name: Pytest api
+        run: uv run pytest apps/api/tests -q
+
+  typescript:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with: { version: 9 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: pnpm }
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm turbo lint typecheck test build

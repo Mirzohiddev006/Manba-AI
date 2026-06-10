@@ -1,0 +1,25 @@
+[project]
+name = "citation-core"
+version = "0.1.0"
+description = "ManbaAI bibliografik yadro: parsing, formatlash, saralash, imlo, eksport"
+requires-python = ">=3.12"
+dependencies = [
+    "jinja2>=3.1",
+    "python-docx>=1.1",
+    "pydantic>=2.7",
+    "rapidfuzz>=3.9",
+]
+
+[project.optional-dependencies]
+spell = ["spylls>=0.1"]
+llm = ["anthropic>=0.40"]
+
+[dependency-groups]
+dev = ["pytest>=8", "pytest-cov", "mypy", "ruff"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["citation_core"]

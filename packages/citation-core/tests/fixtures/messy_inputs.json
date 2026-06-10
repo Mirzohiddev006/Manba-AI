@@ -1,0 +1,35 @@
+{
+  "_comment": "Tartibsiz kiritishlar: raqamlash, ortiqcha bo'shliq, har xil belgilar — normallashtirilgan natija kutiladi.",
+  "book": [
+    {"input": "[7] Karimov A.A.  Iqtisodiyot nazariyasi:  Darslik. – Toshkent: Iqtisod-moliya, 2020. – 350 b.", "expected": "Karimov A.A. Iqtisodiyot nazariyasi: Darslik. – Toshkent: Iqtisod-moliya, 2020. – 350 b."},
+    {"input": "  Hasanov B.B. Soliq nazariyasi. – Samarqand: Zarafshon, 2021. – 198 b.  ", "expected": "Hasanov B.B. Soliq nazariyasi. – Samarqand: Zarafshon, 2021. – 198 b."},
+    {"input": "• Yo'ldoshev Q.Q. Pedagogika nazariyasi. – Toshkent: Fan, 2018. – 240 b.", "expected": "Yo'ldoshev Q.Q. Pedagogika nazariyasi. – Toshkent: Fan, 2018. – 240 b."}
+  ],
+  "journal_article": [
+    {"input": "5. Tosheva N.N. Agrar sohada raqamlashtirish // O'zbekiston qishloq xo'jaligi. – Toshkent, 2023. – №2. – B. 30–37.", "expected": "Tosheva N.N. Agrar sohada raqamlashtirish // O'zbekiston qishloq xo'jaligi. – Toshkent, 2023. – №2. – B. 30–37."},
+    {"input": "Olimov K.K.  Investitsiya muhitini yaxshilash yo'llari //  Iqtisodiyot va innovatsion texnologiyalar. – Toshkent, 2020. – №5. – B. 88–96.", "expected": "Olimov K.K. Investitsiya muhitini yaxshilash yo'llari // Iqtisodiyot va innovatsion texnologiyalar. – Toshkent, 2020. – №5. – B. 88–96."}
+  ],
+  "foreign_article": [
+    {"input": "[12] Smith J., Brown K. Machine Learning in Economics // Journal of Economic Perspectives. – 2023. – Vol. 37, №2. – P. 115–142.", "expected": "Smith J., Brown K. Machine Learning in Economics // Journal of Economic Perspectives. – 2023. – Vol. 37, №2. – P. 115–142."},
+    {"input": "Chen L. Industrial Policy Revisited // World Development. – 2022. – Vol. 156, №8. – P. 105–129.", "expected": "Chen L. Industrial Policy Revisited // World Development. – 2022. – Vol. 156, №8. – P. 105–129."}
+  ],
+  "web": [
+    {"input": "10) O'zbekiston Respublikasi Davlat statistika qo'mitasi rasmiy sayti [Elektron resurs]. – URL: https://stat.uz (murojaat sanasi: 01.03.2026).", "expected": "O'zbekiston Respublikasi Davlat statistika qo'mitasi rasmiy sayti [Elektron resurs]. – URL: https://stat.uz (murojaat sanasi: 01.03.2026)."},
+    {"input": "YuNESKO statistika instituti ma'lumotlari [Elektron resurs]. – URL: https://uis.unesco.org (murojaat sanasi: 12.01.2026).", "expected": "YuNESKO statistika instituti ma'lumotlari [Elektron resurs]. – URL: https://uis.unesco.org (murojaat sanasi: 12.01.2026)."}
+  ],
+  "legal": [
+    {"input": "1. O'zbekiston Respublikasining «Byudjet kodeksi»ni tasdiqlash to'g'risidagi Qonuni. O'RQ-360-son, 26.12.2013 // Qonunchilik ma'lumotlari milliy bazasi, lex.uz", "expected": "O'zbekiston Respublikasining «Byudjet kodeksi»ni tasdiqlash to'g'risidagi Qonuni. O'RQ-360-son, 26.12.2013 // Qonunchilik ma'lumotlari milliy bazasi, lex.uz"}
+  ],
+  "conference": [
+    {"input": "8) Karimova M.M. Raqamli to'lov tizimlari rivoji // «Moliyaviy texnologiyalar» respublika ilmiy-amaliy konferensiyasi materiallari. – Toshkent, 2024. – B. 55–59.", "expected": "Karimova M.M. Raqamli to'lov tizimlari rivoji // «Moliyaviy texnologiyalar» respublika ilmiy-amaliy konferensiyasi materiallari. – Toshkent, 2024. – B. 55–59."}
+  ],
+  "dissertation": [
+    {"input": "2. Saidov B.B. Bank tizimida risklarni boshqarish metodologiyasi: Iqtisod. fan. dok. (DSc) ... diss. – Toshkent, 2020. – 220 b.", "expected": "Saidov B.B. Bank tizimida risklarni boshqarish metodologiyasi: Iqtisod. fan. dok. (DSc) ... diss. – Toshkent, 2020. – 220 b."}
+  ],
+  "abstract": [
+    {"input": "4. Olimova Z.Z. Eksport diversifikatsiyasi strategiyalari: Iqtisod. fan. bo'yicha falsafa dok. (PhD) ... diss. avtoref. – Toshkent, 2023. – 48 b.", "expected": "Olimova Z.Z. Eksport diversifikatsiyasi strategiyalari: Iqtisod. fan. bo'yicha falsafa dok. (PhD) ... diss. avtoref. – Toshkent, 2023. – 48 b."}
+  ],
+  "book_many": [
+    {"input": "6. Iqtisodiy tahlil / N.N.Tosheva, K.K.Olimov, D.D.Rahimov [va boshq.]. – Toshkent: Moliya, 2022. – 304 b.", "expected": "Iqtisodiy tahlil / N.N.Tosheva, K.K.Olimov, D.D.Rahimov [va boshq.]. – Toshkent: Moliya, 2022. – 304 b."}
+  ]
+}

@@ -1,0 +1,4 @@
+packages:
+  - "apps/webapp"
+  - "apps/admin"
+  - "packages/shared-types"

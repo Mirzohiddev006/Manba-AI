@@ -1,0 +1,70 @@
+{
+  "_comment": "Etalon «kirish → kutilgan natija» juftliklari. TZ 2.3-jadval asosida. 500 tagacha kengaytiriladi — har tur uchun alohida blok.",
+  "book": [
+    {"input": "Karimov A.A. Iqtisodiyot nazariyasi: Darslik. – Toshkent: Iqtisod-moliya, 2020. – 350 b.", "expected": "Karimov A.A. Iqtisodiyot nazariyasi: Darslik. – Toshkent: Iqtisod-moliya, 2020. – 350 b."},
+    {"input": "Yo'ldoshev Q.Q. Pedagogika nazariyasi. – Toshkent: Fan, 2018. – 240 b.", "expected": "Yo'ldoshev Q.Q. Pedagogika nazariyasi. – Toshkent: Fan, 2018. – 240 b."},
+    {"input": "G'ulomov S.S. Menejment: O'quv qo'llanma. – Toshkent: Sharq, 2017. – 416 b.", "expected": "G'ulomov S.S. Menejment: O'quv qo'llanma. – Toshkent: Sharq, 2017. – 416 b."},
+    {"input": "Abdullayeva M.M., Rasulov T.T. Moliya bozorlari: Darslik. – Toshkent: Iqtisod-moliya, 2022. – 388 b.", "expected": "Abdullayeva M.M., Rasulov T.T. Moliya bozorlari: Darslik. – Toshkent: Iqtisod-moliya, 2022. – 388 b."},
+    {"input": "Hasanov B.B. Soliq nazariyasi. – Samarqand: Zarafshon, 2021. – 198 b.", "expected": "Hasanov B.B. Soliq nazariyasi. – Samarqand: Zarafshon, 2021. – 198 b."},
+    {"input": "Абдуллаев Т.Т. Молия назарияси: Дарслик. – Тошкент: Иқтисод-молия, 2019. – 312 б.", "expected": "Абдуллаев Т.Т. Молия назарияси: Дарслик. – Тошкент: Иқтисод-молия, 2019. – 312 б."},
+    {"input": "Иванов И.И. Экономическая теория: Учебник. – Москва: Наука, 2019. – 420 с.", "expected": "Иванов И.И. Экономическая теория: Учебник. – Москва: Наука, 2019. – 420 с."},
+    {"input": "3. Karimov A.A. Iqtisodiyot nazariyasi: Darslik. – Toshkent: Iqtisod-moliya, 2020. – 350 b.", "expected": "Karimov A.A. Iqtisodiyot nazariyasi: Darslik. – Toshkent: Iqtisod-moliya, 2020. – 350 b."}
+  ],
+  "book_many": [
+    {"input": "Menejment asoslari / A.A.Karimov, B.B.Saidov, S.S.Aliyeva [va boshq.]. – Toshkent: Fan, 2019. – 280 b.", "expected": "Menejment asoslari / A.A.Karimov, B.B.Saidov, S.S.Aliyeva [va boshq.]. – Toshkent: Fan, 2019. – 280 b."},
+    {"input": "Bank ishi: Darslik / T.T.Rasulov, M.M.Abdullayeva, B.B.Hasanov [va boshq.]. – Toshkent: Iqtisod-moliya, 2021. – 512 b.", "expected": "Bank ishi: Darslik / T.T.Rasulov, M.M.Abdullayeva, B.B.Hasanov [va boshq.]. – Toshkent: Iqtisod-moliya, 2021. – 512 b."},
+    {"input": "Raqamli iqtisodiyot asoslari / Q.Q.Yo'ldoshev, S.S.G'ulomov, A.A.Karimov [va boshq.]. – Toshkent: Sharq, 2023. – 336 b.", "expected": "Raqamli iqtisodiyot asoslari / Q.Q.Yo'ldoshev, S.S.G'ulomov, A.A.Karimov [va boshq.]. – Toshkent: Sharq, 2023. – 336 b."},
+    {"input": "Менежмент асослари / А.А.Каримов, Б.Б.Саидов, С.С.Алиева [ва бошқ.]. – Тошкент: Фан, 2019. – 280 б.", "expected": "Менежмент асослари / А.А.Каримов, Б.Б.Саидов, С.С.Алиева [ва бошқ.]. – Тошкент: Фан, 2019. – 280 б."},
+    {"input": "Statistika nazariyasi / D.D.Rahimov, N.N.Tosheva, K.K.Olimov [va boshq.]. – Buxoro: Durdona, 2020. – 264 b.", "expected": "Statistika nazariyasi / D.D.Rahimov, N.N.Tosheva, K.K.Olimov [va boshq.]. – Buxoro: Durdona, 2020. – 264 b."},
+    {"input": "Audit asoslari / B.B.Saidov, T.T.Rasulov, M.M.Karimova [va boshq.]. – Toshkent: Moliya, 2018. – 290 b.", "expected": "Audit asoslari / B.B.Saidov, T.T.Rasulov, M.M.Karimova [va boshq.]. – Toshkent: Moliya, 2018. – 290 b."}
+  ],
+  "journal_article": [
+    {"input": "Saidov B.B. Raqamli iqtisodiyotda innovatsiyalar // Iqtisodiyot va ta'lim. – Toshkent, 2021. – №3. – B. 45–52.", "expected": "Saidov B.B. Raqamli iqtisodiyotda innovatsiyalar // Iqtisodiyot va ta'lim. – Toshkent, 2021. – №3. – B. 45–52."},
+    {"input": "Karimova M.M. Soliq siyosatining dolzarb masalalari // Moliya va bank ishi. – Toshkent, 2022. – №1. – B. 12–19.", "expected": "Karimova M.M. Soliq siyosatining dolzarb masalalari // Moliya va bank ishi. – Toshkent, 2022. – №1. – B. 12–19."},
+    {"input": "Olimov K.K. Investitsiya muhitini yaxshilash yo'llari // Iqtisodiyot va innovatsion texnologiyalar. – Toshkent, 2020. – №5. – B. 88–96.", "expected": "Olimov K.K. Investitsiya muhitini yaxshilash yo'llari // Iqtisodiyot va innovatsion texnologiyalar. – Toshkent, 2020. – №5. – B. 88–96."},
+    {"input": "Tosheva N.N. Agrar sohada raqamlashtirish // O'zbekiston qishloq xo'jaligi. – Toshkent, 2023. – №2. – B. 30–37.", "expected": "Tosheva N.N. Agrar sohada raqamlashtirish // O'zbekiston qishloq xo'jaligi. – Toshkent, 2023. – №2. – B. 30–37."},
+    {"input": "Рахимов Д.Д. Молиявий барқарорлик кўрсаткичлари // Иқтисодиёт ва таълим. – Тошкент, 2021. – №4. – Б. 55–63.", "expected": "Рахимов Д.Д. Молиявий барқарорлик кўрсаткичлари // Иқтисодиёт ва таълим. – Тошкент, 2021. – №4. – Б. 55–63."},
+    {"input": "Иванов И.И. Цифровая трансформация экономики // Вопросы экономики. – 2020. – №5. – С. 30–45.", "expected": "Иванов И.И. Цифровая трансформация экономики // Вопросы экономики. – 2020. – №5. – С. 30–45."},
+    {"input": "12) Saidov B.B. Raqamli iqtisodiyotda innovatsiyalar // Iqtisodiyot va ta'lim. – Toshkent, 2021. – №3. – B. 45–52.", "expected": "Saidov B.B. Raqamli iqtisodiyotda innovatsiyalar // Iqtisodiyot va ta'lim. – Toshkent, 2021. – №3. – B. 45–52."}
+  ],
+  "conference": [
+    {"input": "Aliyeva S.S. Sun'iy intellekt va ta'lim // «Raqamli transformatsiya» xalqaro ilmiy-amaliy konferensiyasi materiallari. – Samarqand, 2022. – B. 112–115.", "expected": "Aliyeva S.S. Sun'iy intellekt va ta'lim // «Raqamli transformatsiya» xalqaro ilmiy-amaliy konferensiyasi materiallari. – Samarqand, 2022. – B. 112–115."},
+    {"input": "Hasanov B.B. Yashil iqtisodiyot istiqbollari // «Barqaror rivojlanish» respublika ilmiy-amaliy konferensiyasi materiallari. – Toshkent, 2023. – B. 67–70.", "expected": "Hasanov B.B. Yashil iqtisodiyot istiqbollari // «Barqaror rivojlanish» respublika ilmiy-amaliy konferensiyasi materiallari. – Toshkent, 2023. – B. 67–70."},
+    {"input": "Rasulov T.T. Blokcheyn texnologiyalari moliyada // «Fintex-2021» xalqaro konferensiyasi to'plami. – Toshkent, 2021. – B. 201–206.", "expected": "Rasulov T.T. Blokcheyn texnologiyalari moliyada // «Fintex-2021» xalqaro konferensiyasi to'plami. – Toshkent, 2021. – B. 201–206."},
+    {"input": "Алиева С.С. Сунъий интеллект ва таълим // «Рақамли трансформация» халқаро илмий-амалий конференцияси материаллари. – Самарқанд, 2022. – Б. 112–115.", "expected": "Алиева С.С. Сунъий интеллект ва таълим // «Рақамли трансформация» халқаро илмий-амалий конференцияси материаллари. – Самарқанд, 2022. – Б. 112–115."},
+    {"input": "Olimov K.K. Eksport salohiyatini oshirish omillari // «Iqtisodiy o'sish» ilmiy anjumani materiallari. – Buxoro, 2020. – B. 44–48.", "expected": "Olimov K.K. Eksport salohiyatini oshirish omillari // «Iqtisodiy o'sish» ilmiy anjumani materiallari. – Buxoro, 2020. – B. 44–48."}
+  ],
+  "dissertation": [
+    {"input": "Rahimov D.D. Moliyaviy barqarorlikni ta'minlash mexanizmlari: Iqtisod. fan. bo'yicha falsafa dok. (PhD) ... diss. – Toshkent, 2021. – 160 b.", "expected": "Rahimov D.D. Moliyaviy barqarorlikni ta'minlash mexanizmlari: Iqtisod. fan. bo'yicha falsafa dok. (PhD) ... diss. – Toshkent, 2021. – 160 b."},
+    {"input": "Tosheva N.N. Qishloq xo'jaligida innovatsion jarayonlarni boshqarish: Iqtisod. fan. dok. (DSc) ... diss. – Toshkent, 2022. – 240 b.", "expected": "Tosheva N.N. Qishloq xo'jaligida innovatsion jarayonlarni boshqarish: Iqtisod. fan. dok. (DSc) ... diss. – Toshkent, 2022. – 240 b."},
+    {"input": "Karimova M.M. Soliq yukini optimallashtirish metodologiyasi: Iqtisod. fan. bo'yicha falsafa dok. (PhD) ... diss. – Samarqand, 2020. – 152 b.", "expected": "Karimova M.M. Soliq yukini optimallashtirish metodologiyasi: Iqtisod. fan. bo'yicha falsafa dok. (PhD) ... diss. – Samarqand, 2020. – 152 b."},
+    {"input": "Раҳимов Д.Д. Молиявий барқарорликни таъминлаш механизмлари: Иқтисод. фан. бўйича фалсафа док. (PhD) ... дисс. – Тошкент, 2021. – 160 б.", "expected": "Раҳимов Д.Д. Молиявий барқарорликни таъминлаш механизмлари: Иқтисод. фан. бўйича фалсафа док. (PhD) ... дисс. – Тошкент, 2021. – 160 б."},
+    {"input": "Olimov K.K. Investitsiya loyihalarini moliyalashtirish samaradorligi: Iqtisod. fan. bo'yicha falsafa dok. (PhD) ... diss. – Toshkent, 2023. – 178 b.", "expected": "Olimov K.K. Investitsiya loyihalarini moliyalashtirish samaradorligi: Iqtisod. fan. bo'yicha falsafa dok. (PhD) ... diss. – Toshkent, 2023. – 178 b."}
+  ],
+  "abstract": [
+    {"input": "Rahimov D.D. Moliyaviy barqarorlikni ta'minlash mexanizmlari: Iqtisod. fan. bo'yicha falsafa dok. (PhD) ... diss. avtoref. – Toshkent, 2021. – 46 b.", "expected": "Rahimov D.D. Moliyaviy barqarorlikni ta'minlash mexanizmlari: Iqtisod. fan. bo'yicha falsafa dok. (PhD) ... diss. avtoref. – Toshkent, 2021. – 46 b."},
+    {"input": "Tosheva N.N. Qishloq xo'jaligida innovatsion jarayonlarni boshqarish: Iqtisod. fan. dok. (DSc) ... diss. avtoref. – Toshkent, 2022. – 72 b.", "expected": "Tosheva N.N. Qishloq xo'jaligida innovatsion jarayonlarni boshqarish: Iqtisod. fan. dok. (DSc) ... diss. avtoref. – Toshkent, 2022. – 72 b."},
+    {"input": "Hasanov B.B. Korporativ boshqaruvni takomillashtirish: Iqtisod. fan. bo'yicha falsafa dok. (PhD) ... diss. avtoref. – Samarqand, 2019. – 44 b.", "expected": "Hasanov B.B. Korporativ boshqaruvni takomillashtirish: Iqtisod. fan. bo'yicha falsafa dok. (PhD) ... diss. avtoref. – Samarqand, 2019. – 44 b."},
+    {"input": "Раҳимов Д.Д. Молиявий барқарорликни таъминлаш механизмлари: Иқтисод. фан. бўйича фалсафа док. (PhD) ... дисс. автореф. – Тошкент, 2021. – 46 б.", "expected": "Раҳимов Д.Д. Молиявий барқарорликни таъминлаш механизмлари: Иқтисод. фан. бўйича фалсафа док. (PhD) ... дисс. автореф. – Тошкент, 2021. – 46 б."}
+  ],
+  "legal": [
+    {"input": "O'zbekiston Respublikasining «Ta'lim to'g'risida»gi Qonuni. O'RQ-637-son, 23.09.2020 // Qonunchilik ma'lumotlari milliy bazasi, lex.uz", "expected": "O'zbekiston Respublikasining «Ta'lim to'g'risida»gi Qonuni. O'RQ-637-son, 23.09.2020 // Qonunchilik ma'lumotlari milliy bazasi, lex.uz"},
+    {"input": "O'zbekiston Respublikasi Prezidentining «Raqamli O'zbekiston — 2030» strategiyasini tasdiqlash to'g'risidagi Farmoni. PF-6079-son, 05.10.2020 // Qonunchilik ma'lumotlari milliy bazasi, lex.uz", "expected": "O'zbekiston Respublikasi Prezidentining «Raqamli O'zbekiston — 2030» strategiyasini tasdiqlash to'g'risidagi Farmoni. PF-6079-son, 05.10.2020 // Qonunchilik ma'lumotlari milliy bazasi, lex.uz"},
+    {"input": "O'zbekiston Respublikasi Vazirlar Mahkamasining «Oliy ta'lim muassasalarida o'quv jarayonini tashkil etish to'g'risida»gi Qarori. VM-824-son, 31.12.2020 // Qonunchilik ma'lumotlari milliy bazasi, lex.uz", "expected": "O'zbekiston Respublikasi Vazirlar Mahkamasining «Oliy ta'lim muassasalarida o'quv jarayonini tashkil etish to'g'risida»gi Qarori. VM-824-son, 31.12.2020 // Qonunchilik ma'lumotlari milliy bazasi, lex.uz"},
+    {"input": "O'zbekiston Respublikasining «Investitsiyalar va investitsiya faoliyati to'g'risida»gi Qonuni. O'RQ-598-son, 25.12.2019 // Qonunchilik ma'lumotlari milliy bazasi, lex.uz", "expected": "O'zbekiston Respublikasining «Investitsiyalar va investitsiya faoliyati to'g'risida»gi Qonuni. O'RQ-598-son, 25.12.2019 // Qonunchilik ma'lumotlari milliy bazasi, lex.uz"}
+  ],
+  "web": [
+    {"input": "Jahon banki ma'lumotlari [Elektron resurs]. – URL: https://data.worldbank.org (murojaat sanasi: 15.05.2026).", "expected": "Jahon banki ma'lumotlari [Elektron resurs]. – URL: https://data.worldbank.org (murojaat sanasi: 15.05.2026)."},
+    {"input": "O'zbekiston Respublikasi Davlat statistika qo'mitasi rasmiy sayti [Elektron resurs]. – URL: https://stat.uz (murojaat sanasi: 01.03.2026).", "expected": "O'zbekiston Respublikasi Davlat statistika qo'mitasi rasmiy sayti [Elektron resurs]. – URL: https://stat.uz (murojaat sanasi: 01.03.2026)."},
+    {"input": "Xalqaro valyuta fondi hisobotlari [Elektron resurs]. – URL: https://www.imf.org/en/Publications (murojaat sanasi: 20.04.2026).", "expected": "Xalqaro valyuta fondi hisobotlari [Elektron resurs]. – URL: https://www.imf.org/en/Publications (murojaat sanasi: 20.04.2026)."},
+    {"input": "Жаҳон банки маълумотлари [Электрон ресурс]. – URL: https://data.worldbank.org (мурожаат санаси: 15.05.2026).", "expected": "Жаҳон банки маълумотлари [Электрон ресурс]. – URL: https://data.worldbank.org (мурожаат санаси: 15.05.2026)."},
+    {"input": "Markaziy bank statistik byulleteni [Elektron resurs]. – URL: https://cbu.uz/uz/statistics (murojaat sanasi: 10.02.2026).", "expected": "Markaziy bank statistik byulleteni [Elektron resurs]. – URL: https://cbu.uz/uz/statistics (murojaat sanasi: 10.02.2026)."}
+  ],
+  "foreign_article": [
+    {"input": "Smith J., Brown K. Machine Learning in Economics // Journal of Economic Perspectives. – 2023. – Vol. 37, №2. – P. 115–142.", "expected": "Smith J., Brown K. Machine Learning in Economics // Journal of Economic Perspectives. – 2023. – Vol. 37, №2. – P. 115–142."},
+    {"input": "Johnson M. Digital Transformation and Productivity // American Economic Review. – 2022. – Vol. 112, №4. – P. 1034–1070.", "expected": "Johnson M. Digital Transformation and Productivity // American Economic Review. – 2022. – Vol. 112, №4. – P. 1034–1070."},
+    {"input": "Lee S., Park H., Kim J. Fintech Adoption in Emerging Markets // Journal of Banking and Finance. – 2021. – Vol. 89, №1. – P. 220–238.", "expected": "Lee S., Park H., Kim J. Fintech Adoption in Emerging Markets // Journal of Banking and Finance. – 2021. – Vol. 89, №1. – P. 220–238."},
+    {"input": "Garcia R. Green Finance and Sustainable Growth // Energy Economics. – 2024. – Vol. 130, №3. – P. 55–78.", "expected": "Garcia R. Green Finance and Sustainable Growth // Energy Economics. – 2024. – Vol. 130, №3. – P. 55–78."},
+    {"input": "Anderson P., White T. Behavioral Insights in Public Policy // Quarterly Journal of Economics. – 2020. – Vol. 135, №2. – P. 711–754.", "expected": "Anderson P., White T. Behavioral Insights in Public Policy // Quarterly Journal of Economics. – 2020. – Vol. 135, №2. – P. 711–754."}
+  ]
+}
