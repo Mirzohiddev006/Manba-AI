@@ -13,5 +13,4 @@ dist/
 pytest-cache-files-*/
 coverage/
 htmlcov/
-*.docx_tmp
-*.tfvars
+*.pem

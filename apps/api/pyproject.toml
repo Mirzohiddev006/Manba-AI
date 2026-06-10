@@ -26,6 +26,7 @@ dependencies = [
     "rispy>=0.9",
     "rapidfuzz>=3.9",
     "mangum>=0.19",
+    "python-multipart>=0.0.9",
 ]
 
 [dependency-groups]
