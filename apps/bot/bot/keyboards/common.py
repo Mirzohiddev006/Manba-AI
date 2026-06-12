@@ -118,3 +118,54 @@ def export_kb(lang: str) -> InlineKeyboardMarkup:
         ],
         [InlineKeyboardButton(text=t(lang, "btn-home"), callback_data="nav:home")],
     ])
+
+
+def settings_kb(lang: str, script: str) -> InlineKeyboardMarkup:
+    script_name = t(lang, "script-latin" if script == "latin" else "script-cyr")
+    return InlineKeyboardMarkup(inline_keyboard=[
+        [InlineKeyboardButton(text=t(lang, "btn-lang"), callback_data="set:lang")],
+        [InlineKeyboardButton(
+            text=t(lang, "btn-script", script=script_name), callback_data="set:script"
+        )],
+        [InlineKeyboardButton(text=t(lang, "btn-home"), callback_data="nav:home")],
+    ])
+
+
+def lists_kb(lang: str, lists: list[dict]) -> InlineKeyboardMarkup:
+    rows = [
+        [InlineKeyboardButton(
+            text=f"📚 {lst['title']} ({lst['items_count']})",
+            callback_data=f"list:open:{lst['id']}",
+        )]
+        for lst in lists[:8]
+    ]
+    rows.append([
+        InlineKeyboardButton(text=t(lang, "list-create"), callback_data="list:new"),
+        InlineKeyboardButton(text=t(lang, "btn-home"), callback_data="nav:home"),
+    ])
+    return InlineKeyboardMarkup(inline_keyboard=rows)
+
+
+def list_view_kb(lang: str, list_id: int) -> InlineKeyboardMarkup:
+    return InlineKeyboardMarkup(inline_keyboard=[
+        [
+            InlineKeyboardButton(
+                text=t(lang, "btn-export-word"), callback_data=f"list:word:{list_id}"
+            ),
+            InlineKeyboardButton(
+                text=t(lang, "btn-export-text"), callback_data=f"list:text:{list_id}"
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text=t(lang, "btn-delete-list"), callback_data=f"list:del:{list_id}"
+            ),
+            InlineKeyboardButton(text=t(lang, "btn-back"), callback_data="list:back"),
+        ],
+    ])
+
+
+def new_source_kb(lang: str) -> InlineKeyboardMarkup:
+    return InlineKeyboardMarkup(inline_keyboard=[
+        [InlineKeyboardButton(text=t(lang, "btn-try-sample"), callback_data="demo:parse")],
+    ])

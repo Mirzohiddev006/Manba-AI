@@ -43,3 +43,11 @@ async def set_spell_session(tg_id: int, text: str, issues: list[dict]) -> None:
 async def get_spell_session(tg_id: int) -> dict | None:
     raw = await get_redis().get(f"spell:{tg_id}")
     return json.loads(raw) if raw else None
+
+
+async def get_user_script(tg_id: int) -> str:
+    return await get_redis().get(f"script:{tg_id}") or "latin"
+
+
+async def set_user_script(tg_id: int, script: str) -> None:
+    await get_redis().set(f"script:{tg_id}", script)

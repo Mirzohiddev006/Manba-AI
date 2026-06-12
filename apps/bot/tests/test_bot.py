@@ -33,7 +33,8 @@ def test_render_card_marks_low_confidence():
         "field_confidence": {"title": 0.9, "publisher": 0.3},
     }
     card = render_card("uz", src)
-    assert "❓publisher" in card and "62%" in card
+    assert "publisher" in card and "62%" in card
+    assert "▰" in card and "<blockquote>" in card  # vizual shkala + premium kartochka
 
 
 def test_main_menu_max_six_buttons():

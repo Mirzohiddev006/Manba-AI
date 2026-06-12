@@ -1,6 +1,14 @@
-start-welcome = Assalomu alaykum, { $name }! 👋
-    Men ManbaAI — ilmiy manbalarni OAK talablariga moslab rasmiylashtiruvchi yordamchiman.
-    Manba yuboring (matn, PDF, URL, DOI yoki ISBN) — men uni standart ko'rinishga keltiraman.
+start-welcome = 👋 <b>Xush kelibsiz, { $name }!</b>
+
+    Men <b>ManbaAI</b> — adabiyotlar ro'yxatini <b>OAK talablari</b>ga moslab rasmiylashtiruvchi yordamchingizman.
+
+    ⚡ <b>Qanday ishlataman?</b>
+    1️⃣ Manbani yuboring — matn, URL, DOI yoki ISBN
+    2️⃣ Men uni standart ko'rinishga keltiraman
+    3️⃣ ➕ bilan ro'yxatga qo'shing
+    4️⃣ 📤 bilan tayyor Word faylni oling
+
+    👇 Pastdagi menyudan boshlang yoki shunchaki manba yuboring!
 choose-lang = Tilni tanlang / Тилни танланг / Выберите язык:
 lang-set = Til o'rnatildi: o'zbek (lotin) ✅
 main-menu = Bosh menyu
@@ -57,15 +65,40 @@ premium-info = ⭐ <b>Premium</b>: cheksiz manbalar, PDF 20 MB gacha, OCR.
     Narx: 29 000 so'm/oy. To'lov: Click / Payme / Telegram Stars.
 feedback-ask = Fikr-mulohazangizni yozib yuboring:
 feedback-thanks = ✅ Rahmat! Murojaatingiz qabul qilindi.
-help-text = <b>Qo'llanma</b>
-    /new — manba kiritish (matn/PDF/URL/DOI/ISBN)
-    /list — ro'yxatlarim
-    /export — Word eksport
-    /spell — imlo tekshiruvi
-    /settings — sozlamalar
-    /premium — tariflar
-    /feedback — fikr bildirish
+help-text = 📖 <b>Qo'llanma</b>
+
+    <b>Asosiy imkoniyatlar:</b>
+    ➕ Manba yuboring — avtomatik OAK formatiga keltiraman
+    📚 Ro'yxatlar — guruhlangan, alifbo tartibida
+    📤 Eksport — Word (.docx), OAK 3-ilova ko'rinishida
+    🔍 /spell — imloviy xatolarni tekshirish
+    ✍️ Sozlamalarda lotin ⇄ kirill almashtirish
+
+    <b>Qo'llab-quvvatlanadigan manbalar:</b>
+    📕 Kitob • 📄 Maqola • 🎓 Dissertatsiya • 🏛 Qonun • 🌐 Sayt • 🌍 Xorijiy
+
+    💬 Taklif bormi? /feedback orqali yozing!
 unknown = Tushunmadim. /help ni ko'ring yoki manba yuboring.
 maintenance = 🔧 Texnik tanaffus. Birozdan keyin urinib ko'ring.
 spell-ask = Tekshiriladigan matnni yuboring:
 parse-error = ❗ Tahlil qilib bo'lmadi. Manba matnini to'liqroq yuboring (kamida bir necha so'z).
+settings-menu = ⚙️ Sozlamalar — kerakli bo'limni tanlang:
+btn-lang = 🌐 Til
+btn-script = ✍️ Yozuv: { $script }
+script-latin = Lotin
+script-cyr = Кирилл
+script-set = ✍️ Eksport yozuvi o'zgartirildi: { $script }
+new-hint = Manba yuboring: oddiy matn (bir nechta qator ham bo'ladi), URL, DOI yoki ISBN.
+    Yoki namuna bilan sinab ko'ring 👇
+btn-try-sample = 🧪 Namuna bilan sinash
+btn-export-word = 📤 Word (.docx)
+btn-export-text = 📋 Matn ko'rinishida
+btn-delete-list = 🗑 Ro'yxatni o'chirish
+list-view-title = 📚 «{ $title }» — { $count } manba
+list-deleted = 🗑 Ro'yxat o'chirildi
+choose-list = Ro'yxatni tanlang:
+list-empty-add = Ro'yxat bo'sh. Manba yuboring va ➕ bilan qo'shing.
+unit-source = manba
+group-1 = 🏛 I. Normativ-huquqiy hujjatlar
+group-2 = 📚 II. Asosiy adabiyotlar
+group-3 = 🌐 III. Internet manbalar

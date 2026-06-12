@@ -15,15 +15,29 @@ from ..redis_store import get_redis
 router = Router()
 
 
+def _conf_bar(confidence: float) -> str:
+    """Vizual ishonch shkalasi: ▰▰▰▰▱ 85%"""
+    filled = round(confidence * 5)
+    return "▰" * filled + "▱" * (5 - filled)
+
+
 def render_card(lang: str, src: dict) -> str:
     type_name = t(lang, f"type-{src['source_type']}")
     emoji = TYPE_EMOJI.get(src["source_type"], "📄")
     conf = int(src["confidence"] * 100)
-    title = t(lang, "parse-result-title", emoji=emoji, type_name=type_name, confidence=conf)
+    bar = _conf_bar(src["confidence"])
     text = html.escape(src["formatted_text"])
     low = [k for k, v in (src.get("field_confidence") or {}).items() if v < 0.6]
-    note = ("\n\n" + t(lang, "low-confidence-note") + ": " + ", ".join(f"❓{f}" for f in low)) if low else ""
-    return f"{title}\n\n{text}{note}"
+    note = (
+        "\n⚠️ " + t(lang, "low-confidence-note") + ": "
+        + ", ".join(f"<i>{f}</i>" for f in low)
+    ) if low else ""
+    return (
+        f"{emoji} <b>{type_name}</b>\n"
+        f"{bar} <i>{conf}%</i>\n\n"
+        f"<blockquote>{text}</blockquote>"
+        f"{note}"
+    )
 
 
 @router.message(F.document & F.document.mime_type == "application/pdf")
